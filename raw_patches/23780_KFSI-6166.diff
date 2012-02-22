@@ -1,0 +1,104 @@
+Index: financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ld/document/SalaryExpenseTransferDocument.java
+===================================================================
+--- financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ld/document/SalaryExpenseTransferDocument.java	(revision 23779)
++++ financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ld/document/SalaryExpenseTransferDocument.java	(revision 23780)
+@@ -69,7 +69,9 @@
+      *      org.kuali.kfs.sys.businessobject.GeneralLedgerPendingEntrySequenceHelper)
+      */
+     public boolean generateLaborLedgerPendingEntries(AccountingLine accountingLine, GeneralLedgerPendingEntrySequenceHelper sequenceHelper) {
+-        LOG.info("started generateLaborLedgerPendingEntries()");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("started generateLaborLedgerPendingEntries()");
++        }
+         
+         boolean isSuccessful = true;
+         ExpenseTransferAccountingLine expenseTransferAccountingLine = (ExpenseTransferAccountingLine) accountingLine;
+@@ -91,7 +93,9 @@
+      * @see org.kuali.kfs.module.ld.document.LaborExpenseTransferDocumentBase#generateLaborLedgerBenefitClearingPendingEntries(org.kuali.kfs.sys.businessobject.GeneralLedgerPendingEntrySequenceHelper)
+      */
+     public boolean generateLaborLedgerBenefitClearingPendingEntries(GeneralLedgerPendingEntrySequenceHelper sequenceHelper) {
+-        LOG.info("started generateLaborLedgerBenefitClearingPendingEntries()");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("started generateLaborLedgerBenefitClearingPendingEntries()");
++        }
+ 
+         String chartOfAccountsCode = SpringContext.getBean(ParameterService.class).getParameterValue(SalaryExpenseTransferDocument.class, LaborConstants.SalaryExpenseTransfer.BENEFIT_CLEARING_CHART_PARM_NM);
+         String accountNumber = SpringContext.getBean(ParameterService.class).getParameterValue(SalaryExpenseTransferDocument.class, LaborConstants.SalaryExpenseTransfer.BENEFIT_CLEARING_ACCOUNT_PARM_NM);
+Index: financial-system/kfs/trunk/work/src/org/kuali/kfs/module/purap/document/PurchasingAccountsPayableDocumentBase.java
+===================================================================
+--- financial-system/kfs/trunk/work/src/org/kuali/kfs/module/purap/document/PurchasingAccountsPayableDocumentBase.java	(revision 23779)
++++ financial-system/kfs/trunk/work/src/org/kuali/kfs/module/purap/document/PurchasingAccountsPayableDocumentBase.java	(revision 23780)
+@@ -336,7 +336,9 @@
+      */
+     @Override
+     protected List getPersistedSourceAccountingLinesForComparison() {
+-        LOG.info("Checking persisted source accounting lines for read-only fields");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("Checking persisted source accounting lines for read-only fields");
++        }
+         List<String> restrictedItemTypesList = new ArrayList<String>();
+         try {
+             restrictedItemTypesList = SpringContext.getBean(ParameterService.class).getParameterValues(this.getClass(), PurapParameterConstants.PURAP_ITEM_TYPES_RESTRICTING_ACCOUNT_EDIT);
+@@ -366,7 +368,9 @@
+      */
+     @Override
+     protected List getSourceAccountingLinesForComparison() {
+-        LOG.info("Checking source accounting lines for read-only fields");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("Checking source accounting lines for read-only fields");
++        }
+         List<String> restrictedItemTypesList = new ArrayList<String>();
+         try {
+             restrictedItemTypesList = SpringContext.getBean(ParameterService.class).getParameterValues(this.getClass(), PurapParameterConstants.PURAP_ITEM_TYPES_RESTRICTING_ACCOUNT_EDIT);
+Index: financial-system/kfs/trunk/work/src/com/rsmart/kuali/kfs/cr/dataaccess/impl/CheckReconciliationDaoOjb.java
+===================================================================
+--- financial-system/kfs/trunk/work/src/com/rsmart/kuali/kfs/cr/dataaccess/impl/CheckReconciliationDaoOjb.java	(revision 23779)
++++ financial-system/kfs/trunk/work/src/com/rsmart/kuali/kfs/cr/dataaccess/impl/CheckReconciliationDaoOjb.java	(revision 23780)
+@@ -58,7 +58,9 @@
+      * @see com.rsmart.kuali.kfs.cr.dataaccess.CheckReconciliationDao#getAll()
+      */
+     public List getAll() {
+-        LOG.info("getAll() started");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("getAll() started");
++        }
+ 
+         QueryByCriteria qbc = new QueryByCriteria(CheckReconciliationDaoOjb.class);
+ 
+@@ -128,7 +130,9 @@
+      * @see com.rsmart.kuali.kfs.cr.dataaccess.CheckReconciliationDao#getAllCheckReconciliationForSearchCriteria(java.util.Date, java.util.Date)
+      */
+     public List getAllCheckReconciliationForSearchCriteria(Date startDate, Date endDate, Set<String> statusCodes) {
+-        LOG.info("getAllCheckReconciliationForSearchCriteria() starting");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("getAllCheckReconciliationForSearchCriteria() starting");
++        }
+         Criteria criteria = new Criteria();
+ 
+         if (!(startDate == null)) {
+@@ -176,7 +180,9 @@
+      */
+     @Override
+     public List<PaymentGroup> getAllPaymentGroupForSearchCriteria(KualiInteger disbNbr, Collection<String> bankCodes, Date disbursementDate) {
+-        LOG.info("getAllPaymentGroupForSearchCriteria() starting");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("getAllPaymentGroupForSearchCriteria() starting");
++        }
+         Criteria criteria = new Criteria();
+ 
+         criteria.addEqualTo(PdpPropertyConstants.PaymentGroup.PAYMENT_GROUP_DISBURSEMENT_NBR, disbNbr);
+Index: financial-system/kfs/trunk/build/external/log4j.properties
+===================================================================
+--- financial-system/kfs/trunk/build/external/log4j.properties	(revision 23779)
++++ financial-system/kfs/trunk/build/external/log4j.properties	(revision 23780)
+@@ -79,4 +79,7 @@
+ # KFSI-6054 Seriously reduce the verbosity of the KFS logs: Part 2
+ log4j.logger.edu.arizona.kfs.module.ld.service.impl.EreSweepServiceImpl=WARN
+ log4j.logger.edu.arizona.kfs.module.ld.service.impl.EreSweepFileHandlerHelperImpl=WARN
+-log4j.logger.org.kuali.rice.kew.docsearch.dao.impl.DocumentSearchDAOJdbcImpl=WARN
+\ No newline at end of file
++log4j.logger.org.kuali.rice.kew.docsearch.dao.impl.DocumentSearchDAOJdbcImpl=WARN
++
++# KFSI-6166 Seriously reduce the verbosity of the KFS logs: Part 3
++log4j.logger.org.kuali.rice.kew.service.impl.DocumentTypeResponsibilityTypeServiceImpl=WARN
+\ No newline at end of file

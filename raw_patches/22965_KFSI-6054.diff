@@ -1,0 +1,62 @@
+Index: rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/actiontaken/service/impl/ActionTakenServiceImpl.java
+===================================================================
+--- rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/actiontaken/service/impl/ActionTakenServiceImpl.java	(revision 22964)
++++ rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/actiontaken/service/impl/ActionTakenServiceImpl.java	(revision 22965)
+@@ -194,7 +194,7 @@
+     			dateLastApproved = actionTaken.getActionDate();
+     		}
+ 		}
+-    	LOG.info("Exit getLastApprovedDate("+routeHeaderId+") "+dateLastApproved);
++    	LOG.debug("Exit getLastApprovedDate("+routeHeaderId+") "+dateLastApproved);
+     	return dateLastApproved;
+     }
+ 
+Index: rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/service/impl/PostProcessorServiceImpl.java
+===================================================================
+--- rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/service/impl/PostProcessorServiceImpl.java	(revision 22964)
++++ rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/service/impl/PostProcessorServiceImpl.java	(revision 22965)
+@@ -21,6 +21,7 @@
+ import java.util.List;
+ 
+ import org.apache.commons.collections.ListUtils;
++import org.apache.log4j.Level;
+ import org.apache.log4j.Logger;
+ import org.apache.ojb.broker.OptimisticLockException;
+ import org.kuali.rice.kew.dto.ActionTakenEventDTO;
+@@ -66,8 +67,8 @@
+      */
+     public boolean doRouteStatusChange(DocumentRouteStatusChangeDTO statusChangeEvent) throws RemoteException {
+         try {
+-        	if ( LOG.isInfoEnabled() ) {
+-        		LOG.info(new StringBuffer("started handling route status change from ").append(statusChangeEvent.getOldRouteStatus()).append(" to ").append(statusChangeEvent.getNewRouteStatus()).append(" for document ").append(statusChangeEvent.getRouteHeaderId()));
++        	if ( LOG.isDebugEnabled() ) {
++        		LOG.debug(new StringBuffer("started handling route status change from ").append(statusChangeEvent.getOldRouteStatus()).append(" to ").append(statusChangeEvent.getNewRouteStatus()).append(" for document ").append(statusChangeEvent.getRouteHeaderId()));
+         	}
+             establishGlobalVariables();
+             Document document = documentService.getByDocumentHeaderId(statusChangeEvent.getRouteHeaderId().toString());
+@@ -90,8 +91,8 @@
+                     documentService.updateDocument(document);
+                 }
+             }
+-            if ( LOG.isInfoEnabled() ) {
+-            	LOG.info(new StringBuffer("finished handling route status change from ").append(statusChangeEvent.getOldRouteStatus()).append(" to ").append(statusChangeEvent.getNewRouteStatus()).append(" for document ").append(statusChangeEvent.getRouteHeaderId()));
++            if ( LOG.isDebugEnabled() ) {
++            	LOG.debug(new StringBuffer("finished handling route status change from ").append(statusChangeEvent.getOldRouteStatus()).append(" to ").append(statusChangeEvent.getNewRouteStatus()).append(" for document ").append(statusChangeEvent.getRouteHeaderId()));
+             }
+         }
+         catch (Exception e) {
+Index: rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java
+===================================================================
+--- rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java	(revision 22964)
++++ rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java	(revision 22965)
+@@ -324,7 +324,9 @@
+      * This method will throw a {@link ValidationException} if there is a valid locking document in existence and throwExceptionIfLocked is true.
+      */
+     public static void checkForLockingDocument(Maintainable maintainable, boolean throwExceptionIfLocked) {
+-        LOG.info("starting checkForLockingDocument (by Maintainable)");
++        if ( LOG.isDebugEnabled() ) {
++        	LOG.debug("starting checkForLockingDocument (by Maintainable)");
++        }
+ 
+         // get the docHeaderId of the blocking docs, if any are locked and blocking
+         //String blockingDocId = getMaintenanceDocumentService().getLockingDocumentId(maintainable, null);

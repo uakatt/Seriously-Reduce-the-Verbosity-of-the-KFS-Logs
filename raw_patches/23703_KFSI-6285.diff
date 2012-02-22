@@ -1,0 +1,13 @@
+Index: rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/routeheader/DocumentRouteHeaderValue.java
+===================================================================
+--- rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/routeheader/DocumentRouteHeaderValue.java	(revision 23702)
++++ rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/routeheader/DocumentRouteHeaderValue.java	(revision 23703)
+@@ -900,7 +900,7 @@
+ 	}
+ 
+ 	public String toString() {
+-	    return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
++	    return new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE)
+ 	        .append("routeHeaderId", routeHeaderId)
+             .append("documentTypeId", documentTypeId)
+             .append("docVersion", docVersion)

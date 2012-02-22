@@ -1,0 +1,13 @@
+Index: rice/branches/rice-release-1-0-3-2-ua-br/impl/src/main/resources/META-INF/kew-config-defaults.xml
+===================================================================
+--- rice/branches/rice-release-1-0-3-2-ua-br/impl/src/main/resources/META-INF/kew-config-defaults.xml	(revision 23540)
++++ rice/branches/rice-release-1-0-3-2-ua-br/impl/src/main/resources/META-INF/kew-config-defaults.xml	(revision 23541)
+@@ -74,7 +74,7 @@
+       enActionRegistry,
+       enCacheAdministrator,
+       enEncryptionService,
+-      enQuickLinksService
++      enQuickLinksService,
+       enDocumentLinkService
+   </param>
+ 

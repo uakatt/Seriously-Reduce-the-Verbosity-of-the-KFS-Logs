@@ -1,0 +1,26 @@
+Index: rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/web/struts/action/KualiRequestProcessor.java
+===================================================================
+--- rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/web/struts/action/KualiRequestProcessor.java	(revision 23704)
++++ rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/web/struts/action/KualiRequestProcessor.java	(revision 23705)
+@@ -201,7 +201,7 @@
+ 						userSession.setKualiSessionId(kualiSessionId);
+ 					} /* if: principal is active */ else {
+ 						LOG.warn("Principal is Inactive: " + principalName);
+-						throw new RuntimeException("You cannot log in, because you are not an active Kuali user.\nPlease ask someone to activate your account, if you need to use Kuali Systems.\nThe user id provided was: " + principalName + ".\n");
++						throw new RuntimeException("You cannot log in, because you are not an active Kuali user. Please ask someone to activate your account, if you need to use Kuali Systems. The user id provided was: " + principalName + ".");
+ 					}
+ 				} /* if: principal is null */ else {
+ 					LOG.warn("Principal Name not found in IdentityManagementService: " + principalName);
+Index: financial-system/kfs/trunk/work/src/org/kuali/kfs/sys/batch/Job.java
+===================================================================
+--- financial-system/kfs/trunk/work/src/org/kuali/kfs/sys/batch/Job.java	(revision 23704)
++++ financial-system/kfs/trunk/work/src/org/kuali/kfs/sys/batch/Job.java	(revision 23705)
+@@ -85,7 +85,7 @@
+         Date jobRunDate = dateTimeService.getCurrentDate();
+         int currentStepNumber = 0;
+         try {
+-            LOG.info("Executing job: " + jobExecutionContext.getJobDetail() + " on machine " + getMachineName() + " scheduler instance id " + jobExecutionContext.getScheduler().getSchedulerInstanceId() + "\n" + jobDataMapToString(jobExecutionContext.getJobDetail().getJobDataMap()));
++            LOG.info("Executing job: " + jobExecutionContext.getJobDetail() + " on machine " + getMachineName() + " scheduler instance id " + jobExecutionContext.getScheduler().getSchedulerInstanceId() + ". " + jobDataMapToString(jobExecutionContext.getJobDetail().getJobDataMap()));
+             for (Step step : getSteps()) {
+                 currentStepNumber++;
+                 // prevent starting of the next step if the thread has an interrupted status

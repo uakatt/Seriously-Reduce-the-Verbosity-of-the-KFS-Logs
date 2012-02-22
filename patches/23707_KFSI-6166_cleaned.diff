@@ -1,0 +1,13 @@
+Index: build/external/log4j.properties
+===================================================================
+--- build/external/log4j.properties	(revision 23706)
++++ build/external/log4j.properties	(revision 23707)
+@@ -68,7 +68,7 @@
+ log4j.logger.org.kuali.rice.kew.docsearch.SearchableAttribute=WARN
+ log4j.logger.org.kuali.rice.kew.engine.node.NodeJotter=WARN
+ log4j.logger.org.kuali.rice.kew.engine.StandardWorkflowEngine=WARN
+-#log4j.logger.org.kuali.rice.kew.util.PerformanceLogger=WARN
++log4j.logger.org.kuali.rice.kew.util.PerformanceLogger=WARN
+ log4j.logger.org.kuali.rice.kns.document.DocumentBase=WARN
+ log4j.logger.org.kuali.rice.kns.datadictionary.DataDictionary=ERROR
+ log4j.logger.org.kuali.rice.service.impl.DocumentServiceImpl=WARN

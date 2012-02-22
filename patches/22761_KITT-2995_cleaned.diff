@@ -1,0 +1,23 @@
+Index: build/external/log4j.properties
+===================================================================
+--- build/external/log4j.properties	(revision 22760)
++++ build/external/log4j.properties	(revision 22761)
+@@ -61,3 +61,17 @@
+ log4j.logger.org.jasig.cas.client.authentication.AuthenticationFilter=ERROR
+ log4j.logger.org.jasig.cas.client.validation.Cas20ProxyReceivingTicketValidationFilter=ERROR
+ log4j.logger.org.kuali.rice.kns.util.ObjectUtils=OFF
++
++# KITT-2995 Seriously reduce the verbosity of the KFS logs: Part 1
++log4j.logger.edu.arizona.kfs.pdp.batch.AchPayeeBankAcctInputFileType=WARN
++log4j.logger.org.kuali.kfs.module.purap.util.PurApObjectUtils=WARN
++log4j.logger.org.kuali.rice.kew.docsearch.SearchableAtribute=WARN
++log4j.logger.org.kuali.rice.kew.engine.node.NodeJotter=WARN
++log4j.logger.org.kuali.rice.kew.engine.StandardWorkflowEngine=WARN
++#log4j.logger.org.kuali.rice.kew.util.PerformanceLogger=WARN
++log4j.logger.org.kuali.rice.kns.document.DocumentBase=WARN
++log4j.logger.org.kuali.rice.kns.datadictionary.DataDictionary=ERROR
++log4j.logger.org.kuali.rice.service.impl.DocumentServiceImpl=WARN
++log4j.logger.org.kuali.rice.kns.web.struts.action.KualiAction=ERROR
++log4j.logger.org.kuali.rice.kns.web.struts.pojo.PojoPropertyUtilsBean=ERROR
++log4j.logger.org.springframework.ldap.core.LdapTemplate=WARN
+\ No newline at end of file

@@ -1,0 +1,26 @@
+Index: work/src/org/kuali/kfs/module/ld/batch/service/impl/LaborPosterServiceImpl.java
+===================================================================
+--- work/src/org/kuali/kfs/module/ld/batch/service/impl/LaborPosterServiceImpl.java	(revision 23711)
++++ work/src/org/kuali/kfs/module/ld/batch/service/impl/LaborPosterServiceImpl.java	(revision 23712)
+@@ -97,7 +97,9 @@
+      * @see org.kuali.kfs.module.ld.batch.service.LaborPosterService#postMainEntries()
+      */
+     public void postMainEntries() {
+-        LOG.info("postMainEntries() started");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("postMainEntries() started");
++        }
+ 
+         Date runDate = dateTimeService.getCurrentSqlDate();
+         this.postLaborLedgerEntries(runDate);
+@@ -111,7 +113,9 @@
+      * @param runDate the data when the process is running
+      */
+     protected void postLaborLedgerEntries(Date runDate) {
+-        LOG.info("postLaborLedgerEntries() started..........................");
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("postLaborLedgerEntries() started");
++        }
+         numberOfErrorOriginEntry = 0;
+         // change file name to FIS
+ 

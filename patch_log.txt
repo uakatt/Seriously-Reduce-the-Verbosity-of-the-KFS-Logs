@@ -1,0 +1,122 @@
+------------------------------------------------------------------------
+r22761 | srawlins@CATNET.ARIZONA.EDU | 2011-11-07 16:22:46 -0700 (Mon, 07 Nov 2011) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/log4j.properties
+
+KITT-2995 Changing the severity levels on a number of classes, in log4j.properties.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r22965 | srawlins@CATNET.ARIZONA.EDU | 2011-11-23 15:20:38 -0700 (Wed, 23 Nov 2011) | 1 line
+Changed paths:
+   M /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/actiontaken/service/impl/ActionTakenServiceImpl.java
+   M /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/service/impl/PostProcessorServiceImpl.java
+   M /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java
+
+KFSI-6054 Seriously reducing the verbosity of logs by changing the level that certain log messages are logged as.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r22977 | srawlins@CATNET.ARIZONA.EDU | 2011-11-23 15:36:22 -0700 (Wed, 23 Nov 2011) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/appserver/rice-web-1.0.1.war
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-api-1.0.1.jar
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-impl-1.0.1.jar
+
+KFSI-6054 KFSI-6046 KITT-2995 the rice jars for reducing log verbosity
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r22977 | srawlins@CATNET.ARIZONA.EDU | 2011-11-23 15:36:22 -0700 (Wed, 23 Nov 2011) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/appserver/rice-web-1.0.1.war
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-api-1.0.1.jar
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-impl-1.0.1.jar
+
+KFSI-6054 KFSI-6046 KITT-2995 the rice jars for reducing log verbosity
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23082 | srawlins@CATNET.ARIZONA.EDU | 2011-12-01 14:09:19 -0700 (Thu, 01 Dec 2011) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/log4j.properties
+   M /financial-system/kfs/trunk/work/src/edu/arizona/kfs/module/ld/service/impl/EreSweepFileHandlerHelperImpl.java
+
+KFSI-6054 bumping 3 warning levels from default to WARN, and changing a bunch of LOG.info's to LOG.debug's
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23165 | srawlins@CATNET.ARIZONA.EDU | 2011-12-07 11:22:13 -0700 (Wed, 07 Dec 2011) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/appserver/rice-web-1.0.1.war
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-api-1.0.1.jar
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-impl-1.0.1.jar
+
+KFSI-5701 KFSI-6054 committing Rice jars and wars and blars with changes from rice code
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23541 | srawlins@CATNET.ARIZONA.EDU | 2012-01-04 16:55:32 -0700 (Wed, 04 Jan 2012) | 1 line
+Changed paths:
+   M /rice/branches/rice-release-1-0-3-2-ua-br/impl/src/main/resources/META-INF/kew-config-defaults.xml
+
+KFSI-6166 I know, weird that this is in KFSI-6166. This is because this line is affecting the PRD logs, which is KC and KFS.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23703 | srawlins@CATNET.ARIZONA.EDU | 2012-01-16 17:56:29 -0700 (Mon, 16 Jan 2012) | 1 line
+Changed paths:
+   M /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/routeheader/DocumentRouteHeaderValue.java
+
+KFSI-6285 Changing ToStringStyle.MULTI_LINE_STYLE to ToStringStyle.DEFAULT_STYLE
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23704 | srawlins@CATNET.ARIZONA.EDU | 2012-01-16 17:57:42 -0700 (Mon, 16 Jan 2012) | 1 line
+Changed paths:
+   M /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kew/service/impl/DocumentTypeResponsibilityTypeServiceImpl.java
+
+KFSI-6166 changed some System.out.println's into LOG.info's. I'm embarrassed.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23705 | srawlins@CATNET.ARIZONA.EDU | 2012-01-16 17:58:49 -0700 (Mon, 16 Jan 2012) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/work/src/org/kuali/kfs/sys/batch/Job.java
+   M /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/web/struts/action/KualiRequestProcessor.java
+
+KFSI-6166 Removed some bare newlines in log statements or exception messages.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23706 | srawlins@CATNET.ARIZONA.EDU | 2012-01-16 17:59:20 -0700 (Mon, 16 Jan 2012) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/work/src/edu/arizona/kfs/module/ld/batch/EreSweepStep.java
+   M /financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ec/document/validation/impl/EffortCertificationDocumentRules.java
+   M /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java
+
+KFSI-6166 Changed some LOG.info's to LOG.debug's.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23707 | srawlins@CATNET.ARIZONA.EDU | 2012-01-16 17:59:48 -0700 (Mon, 16 Jan 2012) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/log4j.properties
+
+KFSI-6166 raising PerformanceLogger to WARN
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23708 | srawlins@CATNET.ARIZONA.EDU | 2012-01-16 18:00:41 -0700 (Mon, 16 Jan 2012) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/appserver/rice-web-1.0.1.war
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-api-1.0.1.jar
+   M /financial-system/kfs/trunk/work/web-root/WEB-INF/lib/rice-impl-1.0.1.jar
+
+KFSI6166 KFSI-6285 committing rice jars and wars and bottles and cans
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23712 | srawlins@CATNET.ARIZONA.EDU | 2012-01-17 10:32:02 -0700 (Tue, 17 Jan 2012) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ld/batch/service/impl/LaborPosterServiceImpl.java
+
+KFSI-6166 Changing some LOG.infos to LOG.debugs
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+r23780 | srawlins@CATNET.ARIZONA.EDU | 2012-01-23 11:46:44 -0700 (Mon, 23 Jan 2012) | 1 line
+Changed paths:
+   M /financial-system/kfs/trunk/build/external/log4j.properties
+   M /financial-system/kfs/trunk/work/src/com/rsmart/kuali/kfs/cr/dataaccess/impl/CheckReconciliationDaoOjb.java
+   M /financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ld/document/SalaryExpenseTransferDocument.java
+   M /financial-system/kfs/trunk/work/src/org/kuali/kfs/module/purap/document/PurchasingAccountsPayableDocumentBase.java
+
+KFSI-6166 Changing some LOG.infos to LOG.debugs; changing DocumentTypeResponsibilityTypeServiceImpl's level from INFO to WARN
+------------------------------------------------------------------------

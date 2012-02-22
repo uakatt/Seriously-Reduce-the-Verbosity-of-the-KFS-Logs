@@ -1,0 +1,111 @@
+Index: rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java
+===================================================================
+--- rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java	(revision 23705)
++++ rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java	(revision 23706)
+@@ -312,7 +312,9 @@
+      * This method will throw a {@link ValidationException} if there is a valid locking document in existence and throwExceptionIfLocked is true.
+      */
+     public static void checkForLockingDocument(MaintenanceDocument document, boolean throwExceptionIfLocked) {
+-        LOG.info("starting checkForLockingDocument (by MaintenanceDocument)");
++    	if ( LOG.isDebugEnabled() ) {
++    	  LOG.debug("starting checkForLockingDocument (by MaintenanceDocument)");
++    	}
+ 
+         // get the docHeaderId of the blocking docs, if any are locked and blocking
+         //String blockingDocId = getMaintenanceDocumentService().getLockingDocumentId(document);
+Index: financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ec/document/validation/impl/EffortCertificationDocumentRules.java
+===================================================================
+--- financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ec/document/validation/impl/EffortCertificationDocumentRules.java	(revision 23705)
++++ financial-system/kfs/trunk/work/src/org/kuali/kfs/module/ec/document/validation/impl/EffortCertificationDocumentRules.java	(revision 23706)
+@@ -68,7 +68,9 @@
+      *      org.kuali.kfs.module.ec.businessobject.EffortCertificationDetail)
+      */
+     public boolean processAddDetailLineRules(EffortCertificationDocument document, EffortCertificationDetail detailLine) {
+-        LOG.info("processAddDetailLineRules() start");
++        if ( LOG.isDebugEnabled() ) {
++            LOG.debug("processAddDetailLineRules() start");
++        }
+ 
+         document.refreshNonUpdateableReferences();
+         detailLine.refreshNonUpdateableReferences();
+@@ -108,7 +110,9 @@
+      *      org.kuali.kfs.module.ec.businessobject.EffortCertificationDetail)
+      */
+     public boolean processUpdateDetailLineRules(EffortCertificationDocument document, EffortCertificationDetail detailLine) {
+-        LOG.info("processUpdateDetailLineRules() start");
++        if ( LOG.isDebugEnabled() ) {
++            LOG.debug("processUpdateDetailLineRules() start");
++        }
+ 
+         if (!this.processAddDetailLineRules(document, detailLine)) {
+             return false;
+@@ -132,7 +136,9 @@
+      */
+     @Override
+     public boolean processCustomApproveDocumentBusinessRules(ApproveDocumentEvent approveEvent) {
+-        LOG.info("processAddLineBusinessRules() start");
++        if ( LOG.isDebugEnabled() ) {
++            LOG.debug("processAddLineBusinessRules() start");
++        }
+ 
+         EffortCertificationDocument effortCertificationDocument = (EffortCertificationDocument) (approveEvent.getDocument());
+         if (this.bypassBusinessRuleIfInitiation(effortCertificationDocument)) {
+@@ -154,7 +160,9 @@
+      */
+     @Override
+     public boolean processCustomRouteDocumentBusinessRules(Document document) {
+-        LOG.info("processAddLineBusinessRules() start");
++        if ( LOG.isDebugEnabled() ) {
++            LOG.debug("processAddLineBusinessRules() start");
++        }
+ 
+         EffortCertificationDocument effortCertificationDocument = (EffortCertificationDocument) document;
+ 
+@@ -231,7 +239,9 @@
+      * @see org.kuali.kfs.module.ec.document.validation.LoadDetailLineRule#processLoadDetailLineRules(org.kuali.kfs.module.ec.document.EffortCertificationDocument)
+      */
+     public boolean processLoadDetailLineRules(EffortCertificationDocument effortCertificationDocument) {
+-        LOG.info("processLoadDetailLineRules() start");
++        if ( LOG.isDebugEnabled() ) {
++            LOG.debug("processLoadDetailLineRules() start");
++        }
+ 
+         boolean isValid = true;
+         String emplid = effortCertificationDocument.getEmplid();
+@@ -290,7 +300,9 @@
+      *         otherwise, false
+      */
+     protected boolean checkDetailLineAttributes(EffortCertificationDetail detailLine) {
+-        LOG.debug("checkDetailLine() start");
++        if ( LOG.isDebugEnabled() ) {
++            LOG.debug("checkDetailLine() start");
++        }
+ 
+         DataDictionary dataDictionary = SpringContext.getBean(DataDictionaryService.class).getDataDictionary();
+ 
+Index: financial-system/kfs/trunk/work/src/edu/arizona/kfs/module/ld/batch/EreSweepStep.java
+===================================================================
+--- financial-system/kfs/trunk/work/src/edu/arizona/kfs/module/ld/batch/EreSweepStep.java	(revision 23705)
++++ financial-system/kfs/trunk/work/src/edu/arizona/kfs/module/ld/batch/EreSweepStep.java	(revision 23706)
+@@ -61,7 +61,9 @@
+      * @see org.kuali.kfs.sys.batch.Step#execute(java.lang.String, java.util.Date)
+      */
+     public boolean execute(String jobName, java.util.Date jobRunDate) throws InterruptedException {
+-        LOG.info("Enter  execute() " + System.currentTimeMillis());
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("Enter  execute() " + System.currentTimeMillis());
++        }
+         String param = "";
+         boolean result = false;
+         try {
+@@ -79,7 +81,9 @@
+         else {
+             result = false;
+         }
+-        LOG.info("Exit  execute() " + System.currentTimeMillis());
++        if (LOG.isDebugEnabled()) {
++            LOG.debug("Exit  execute() " + System.currentTimeMillis());
++        }
+         return result;
+ 
+     }
