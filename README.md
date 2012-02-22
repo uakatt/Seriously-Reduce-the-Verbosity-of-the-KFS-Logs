@@ -58,13 +58,13 @@ has been modified to:
 src/org/kuali/kfs...
 ```
 
-* [`patches/22761_KITT-2995.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/22761_KITT-2995.diff) is the patch file for #22761.
-* [`patches/23082_KFSI-6054.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23082_KFSI-6054.diff) is the patch file for #23082.
-* [`patches/23705_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23705_KFSI-6166.diff) is the patch file for #23705.
-* [`patches/23706_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23706_KFSI-6166.diff) is the patch file for #23706.
-* [`patches/23707_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23707_KFSI-6166.diff) is the patch file for #23707.
-* [`patches/23712_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23712_KFSI-6166.diff) is the patch file for #23712.
-* [`patches/23780_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23780_KFSI-6166.diff) is the patch file for #23780.
+* [`patches/22761_KITT-2995_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/22761_KITT-2995_cleaned.diff) is the patch file for #22761.
+* [`patches/23082_KFSI-6054_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23082_KFSI-6054_cleaned.diff) is the patch file for #23082.
+* [`patches/23705_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23705_KFSI-6166_cleaned.diff) is the patch file for #23705.
+* [`patches/23706_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23706_KFSI-6166_cleaned.diff) is the patch file for #23706.
+* [`patches/23707_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23707_KFSI-6166_cleaned.diff) is the patch file for #23707.
+* [`patches/23712_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23712_KFSI-6166_cleaned.diff) is the patch file for #23712.
+* [`patches/23780_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/patches/23780_KFSI-6166_cleaned.diff) is the patch file for #23780.
 
 <h2><a name="rice_patch_files">Rice Patch Files</a></h2>
 
@@ -80,11 +80,11 @@ has been changed to:
 impl/src/main/java/org/kuali/rice/kns/...
 ```
 
-* [`rice_patches/22965_KFSI-6054.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/22965_KFSI-6054.diff) is the patch file for #22965.
-* [`rice_patches/23704_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23704_KFSI-6166.diff) is the patch file for #23704.
-* [`rice_patches/23705_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23705_KFSI-6166.diff) is the patch file for #23705.
-* [`rice_patches/23706_KFSI-6166.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23706_KFSI-6166.diff) is the patch file for #23706.
-* [`rice_patches/23703_KFSI-6285.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23703_KFSI-6285.diff) is the patch file for #23703.
+* [`rice_patches/22965_KFSI-6054_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/22965_KFSI-6054_cleaned.diff) is the patch file for #22965.
+* [`rice_patches/23704_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23704_KFSI-6166_cleaned.diff) is the patch file for #23704.
+* [`rice_patches/23705_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23705_KFSI-6166_cleaned.diff) is the patch file for #23705.
+* [`rice_patches/23706_KFSI-6166_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23706_KFSI-6166_cleaned.diff) is the patch file for #23706.
+* [`rice_patches/23703_KFSI-6285_cleaned.diff`](Seriously-Reduce-the-Verbosity-of-the-KFS-Logs/blob/master/rice_patches/23703_KFSI-6285_cleaned.diff) is the patch file for #23703.
 
 <h2><a name="revisions">Revisions</a></h2>
 
