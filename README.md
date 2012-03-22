@@ -26,6 +26,8 @@ this README contains several informative sections:
   this modification. Many of which, as you will see, only touch files in a feature branch. The
   revisions that actually made it into the actual modification touch files in `trunk/`. The list
   of patch files is a better reference of which are these revisions.
+* <a href="#files">Lists of Files</a> - These lists contain every file that was created,
+  modified, or deleted for this enhancement.
 
 <h2><a name="jiras">Jiras</a></h2>
 
@@ -139,4 +141,6 @@ Files **modified** for this modification (11 files)
     /work/src/org/kuali/kfs/sys/batch/Job.java
     /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/util/MaintenanceUtils.java
     /rice/branches/ua-release-3/impl/src/main/java/org/kuali/rice/kns/web/struts/action/KualiRequestProcessor.java
+
+<h2><a name="extra_files">Extra Files</a></h2>
 
